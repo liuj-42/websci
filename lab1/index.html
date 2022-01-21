@@ -2,18 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="resources/main.js"></script>
-    <link rel="stylesheet" href="resources/style.css">
+    <title>News Ticker Widget</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link href="css/site.css?v3" rel="stylesheet" type="text/css"/>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-<ul id="content" class="nostyle">
-    <li>there will be more stuff here</li>
-</ul>
-<!--<div class="container">-->
-<!--    <p>this is a test</p>-->
-<!--</div>-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card panel-default">
+                <div class="card-header"><span class="glyphicon glyphicon-list-alt"></span><b>News</b></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul id="content">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="scripts/jquery.bootstrap.newsbox.js?v3" type="text/javascript"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
+
