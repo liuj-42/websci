@@ -21,6 +21,12 @@ https://stackoverflow.com/questions/5280699/jquery-when-understanding
 https://www.w3schools.com/js/js_async.asp
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 https://www.cnet.com/rss/
+https://stackoverflow.com/questions/377644/jquery-ajax-error-handling-show-custom-exception-messages
+https://api.jquery.com/jquery.ajax/
+https://stackoverflow.com/questions/20890943/javascript-settimeout-not-working
+https://www.w3schools.com/jsref/met_win_settimeout.asp
+https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+https://stackoverflow.com/questions/8252638/executing-javascript-after-x-seconds
 
 > Additionally, open source code needs to actually follow the terms of the license (this usually means including an unmodified copy of the license somewhere in your repo–it is against the law to modify someone else’s license in any way, for any reason).
 
