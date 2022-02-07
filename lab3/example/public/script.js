@@ -56,7 +56,7 @@ if (error) {
         url: `/recent?token=${access_token}`,
         type:'GET',
         success: (data) => {
-            // console.log(data)
+            console.log(data) 
             populate_recently_played(data)
         }
     })

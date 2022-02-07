@@ -1,0 +1,104 @@
+.alert-box {
+	padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;  
+    width:100%;
+    position:absolute;
+}
+
+.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    display: none;
+}
+
+.failure {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: none;
+}
+
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display: none;
+}
+
+#login {
+    box-sizing: border-box;
+    padding:5px;
+    width:100%;
+    margin: auto;
+    text-align:center;
+    vertical-align: center;
+    align-items: center;
+}
+
+.center {
+    margin: auto;
+    /* width: fit-content; */
+    height: 50vh;
+}
+
+#login-button{
+    box-sizing: border-box;
+    padding:2px;
+    border:1px solid #5e81ac;
+    border-radius: 5%;
+    background-color: #5e81ac;
+    height: fit-content;
+    margin:auto;
+    /* margin-left:0 auto; */
+    /* width:fit-content; */
+}
+
+#loggedin {
+    box-sizing: border-box;
+    padding: 5px;
+    /* border-radius: 2%; */
+    /* border: 1px solid #1a2d44;
+    background-color: #5e81ac;
+    width:75vw;
+    height: 80vh; */
+    width:fit-content;
+    margin: 0 auto;
+}
+
+.art {
+
+}
+.song {
+    /* margin-top:20%; */
+    font-weight:bold;
+}
+.artists {
+    
+}
+.album {
+
+}
+.card-footer {
+    /* display: flex;
+    align-items: flex-end; */
+    /* position:absolute;
+    bottom:10%; */
+    color:#6e7994;
+}
+.card-body {
+    position:relative;
+}
+.thumbnail {
+    
+}
+#recent {
+    width:max-content;
+    margin: 0 auto;
+}
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
