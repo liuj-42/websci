@@ -53,17 +53,15 @@ if (error) {
     });
 
     $.ajax({
-        url: 'https://api.spotify.com/v1/me/player/recently-played',
-        headers: {
-            'Authorization': 'Bearer ' + access_token
-        },
-        success: function(response) {
-            // console.log(response)
-
+        url: `/recent?token=${access_token}`,
+        type:'GET',
+        success: (data) => {
+            // console.log(data)
+            populate_recently_played(data)
         }
     })
 
-    console.log(`'Authorization': 'Bearer ${access_token}'`)
+    // console.log(`'Authorization': 'Bearer ${access_token}'`)
     } else {
         // render initial screen
         $('#login').show();
@@ -89,12 +87,30 @@ if (error) {
 }
 })();
 
-
-function test() {
-    $.ajax({
-        url: '/test',
-        type:'GET',
-    }).done( (data) => {
-        console.log(data)
+function populate_recently_played(data) {
+    let tracks = data["items"]
+    let out = "<ul>";
+    // console.log(tracks)
+    tracks.forEach(element => {
+        out += `<li>name: ${element["track"]["name"]} | artist(s): `
+        element["track"]["artists"].forEach(artist => {
+            out += `<a href="https://open.spotify.com/artist/5WmX340gDNLIAyUcg4MzWN${artist["id"]}">${artist["name"]} </a>`;
+        })
+        
+        out +=`| album: ${element["track"]["album"]["name"]}</li>`;
     });
+    out += "</ul>";
+    $("#recently-played").html(out)
+    // console.log(out)
 }
+
+// function test() {
+//     let token = "BQBSoI0zXAvoYR77oKHhtaJcBehdeRObozJ09Rx90ML8UmDb_rAVHnnwMddr9NbuHvEIrwxOKl9tozbiy62xJlLXe7Hi87OjDKaXoRWL3bhceJdMAr4_4Y4nR92kZHatuwv3dBchKPNU8-8TDRYrAVoc5Lb5jmoxoQxoRtX-is0g3w";
+//     $.ajax({
+//         url: `/test2?token=${token}`,
+//         type:'GET',
+//         success: (data) => {
+//             console.log(data)
+//         }
+//     });
+// }

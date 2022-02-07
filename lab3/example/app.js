@@ -39,6 +39,7 @@
  app.use(express.static(__dirname + '/public'))
     .use(cors())
     .use(cookieParser());
+app.use( express.json() )
  
  app.get('/login', function(req, res) {
  
@@ -145,12 +146,13 @@
  });
 
 
- app.get('/test', (req, res) => {
-    // const { token } = req.body;
-    // request to https://api.spotify.com/v1/me
+ app.get('/recent', (req, res) => {
+  //  console.log(req.body)
+   const token = req.query.token;
+
     let options = {
-        url: 'https://api.spotify.com/v1/me',
-        headers: { 'Authorization': 'Bearer ' + access_token },
+        url: 'https://api.spotify.com/v1/me/player/recently-played',
+        headers: { 'Authorization': 'Bearer ' + token },
         json: true
     };
     request.get(options, function(error, response, body) {
@@ -162,8 +164,18 @@
  });
 
  app.get('/test2', (req, res) => {
-     
-   
+    const token = req.query.token;
+    //  console.log(token)
+    //  res.status(200).send(token)
+     let options = {
+      url: 'https://api.spotify.com/v1/me/player/recently-played',
+      headers: { 'Authorization': 'Bearer ' + token },
+      json: true
+  };
+  request.get(options, function(error, response, body) {
+      // console.log(body);
+      res.status(200).send(body);
+  });
  })
  
  console.log('Listening on 8888');
