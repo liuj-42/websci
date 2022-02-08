@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/bootstrap.css">
+    <link rel="stylesheet" href="resources/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="alert-box failure"><img class="error" src=resources/alert-triangle.svg alt="error">You need to be signed in to Spotify</div>
+    <div class="alert-box success"><img class="signedin" src="resources/smile.svg" alt="smile">Signed in</div>
+
+    <div id="container">
+    <br/><br/><br/>
+        <h1 class="title">View your Spotify recently played</h1>
+
+
+        <div id="login">
+            <h2><a href="/login" class="btn btn-primary">Log in</a></h2>
+        </div>
+        <div id="loggedin">
+        </div>
+    </div>
+
+    <div id="recently-played"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="resources/main.js"></script>
+    <script src="resources/bootstrap.js"></script>
+
+</body>
+</html>
