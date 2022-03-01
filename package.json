@@ -1,0 +1,25 @@
+{
+  "name": "websci",
+  "version": "1.0.0",
+  "description": "This is the repo for my labs for web science systems development class",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuj-42/websci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuj-42/websci/issues"
+  },
+  "homepage": "https://github.com/liuj-42/websci#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "net": "^1.0.2",
+    "request": "^2.88.2"
+  }
+}
