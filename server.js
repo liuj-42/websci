@@ -49,6 +49,9 @@ app.post('/temperature', (req, res) => {
             json: true
         }
         request.get(options, function(error, response, body) {
+            if (body === undefined) {
+                res.status(400).send(error)
+            }
             res.status(200).send([body, loc]);
         })
     });
