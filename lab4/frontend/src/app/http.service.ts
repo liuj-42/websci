@@ -13,4 +13,8 @@ export class HttpService {
   public sendGetRequest() {
     return this.httpClient.get(this.apiServer);
   }
+
+  public testGet(url: string) {
+    return this.httpClient.get(url);
+  }
 }

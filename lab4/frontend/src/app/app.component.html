@@ -1,4 +1,5 @@
-<app-login></app-login>
+<app-login *ngIf="loggedin==false">
+</app-login>
 <app-loggedin></app-loggedin>
-
-<router-outlet></router-outlet>
+<router-outlet>
+</router-outlet>

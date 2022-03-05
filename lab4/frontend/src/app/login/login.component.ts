@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { HttpService } from '../http.service';
+import { BsModalService, BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { ViewChild,AfterViewInit } from '@angular/core';
 
 
 @Component({
@@ -7,15 +10,33 @@ import { HttpService } from '../http.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  @ViewChild('autoShownModal', { static: false }) autoShownModal?: ModalDirective;
+  isModalShown = true;
 
-  constructor(private httpService: HttpService) { }
+  showModal(): void {
+    this.isModalShown = true;
+  }
+ 
+  hideModal(): void {
+    this.autoShownModal?.hide();
+  }
+ 
+  onHidden(): void {
+    this.isModalShown = false;
+  }
 
 
-  ngOnInit(): void {
-    this.httpService.sendGetRequest().subscribe((data) => {
+  constructor(private modalService: BsModalService, private httpService: HttpService) {}
+
+
+
+  test(url: string) {
+    this.httpService.testGet(url).subscribe((data) => {
       console.log(data);
     })
   }
+
+
 
 }

@@ -1,2 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";  
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+#login {
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    vertical-align: center;
+    align-items: center;
+}
+
+.center {
+    margin: auto;
+    /* width: fit-content; */
+    height: 50vh;
+}
+
+#login-button {
+    box-sizing: border-box;
+    padding: 2px;
+    border: 1px solid #5e81ac;
+    border-radius: 5%;
+    background-color: #5e81ac;
+    height: fit-content;
+    margin: auto;
+    /* margin-left:0 auto; */
+    /* width:fit-content; */
+}
+
+#loggedin {
+    box-sizing: border-box;
+    padding: 5px;
+    /* border-radius: 2%; */
+    /* border: 1px solid #1a2d44;
+    background-color: #5e81ac;
+    width:75vw;
+    height: 80vh; */
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+.not-liked:hover,
+.liked:hover {
+    cursor: pointer;
+}
+
+.not-liked {
+    width: 16px;
+    float: right;
+    background: url("assets/images/not-liked.svg") center no-repeat;
+}
+
+.liked {
+    width: 16px;
+    float: right;
+    background: url("assets/images/liked.svg") center no-repeat;
+}
+
+.addToPlaylist {
+    float: right;
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+}
+
+.list_ {
+    width: 75vw;
+    margin: 0 auto;
+}
+
+.list_item {
+    list-style: none;
+    border: 1px solid black;
+    border-radius: 2%;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.card-horizontal {
+    display:flex;
+    flex-direction: row;
+}
+
+.card-body {
+    box-sizing: border-box;
+    padding: 4%;
+    width: 100%;
+}
