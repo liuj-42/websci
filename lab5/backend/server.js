@@ -19,8 +19,8 @@ const mongo = require("mongodb")
 const MongoClient = require("mongodb").MongoClient;
 const CONNECTION_URL = "mongodb+srv://jam:One23456@cluster0.rup6c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-const DATABASE_NAME = "inclass-test";
-const COLLECTION_NAME = "temp";
+const DATABASE_NAME = "lab5";
+const COLLECTION_NAME = "db";
 
 let client_id = 'd61ccebb867543cea460e6a08bdac648'; // Your client id
 let client_secret = 'fcab6b232f724cf084d7864f1af8c8aa'; // Your secret
@@ -267,9 +267,9 @@ app.post('/db', (req, res) => {
       .then( result => {
         console.log(result);
         collection.insertOne({number: result + 1, data: data})
-          .then(result, error => {
-             if (error) { return res.status(500).send(error); }
-            res.status(200).send(result)
+          .then(result => {
+            // if (error) { return res.status(500).send(error); }
+            return res.status(200).send(result)
           });
       });
     // add new document
@@ -292,8 +292,8 @@ app.put('/db', (req, res) => {
     const options = {upsert: false};
   
     collection.updateMany(filter, replace, options)
-      .then(result, error => {
-        if (error) { return res.status(500).send(error); }
+      .then(result => {
+        // if (error) { return res.status(500).send(error); }
         if (result["modifiedCount"] == 0) {
           res.status(400).send(result);
         } else {
@@ -311,8 +311,8 @@ app.put('/db/:number', (req, res) => {
     const options = {upsert: false};
   
     collection.updateOne(filter, replace, options)
-      .then(result, error => {
-        if (error) { return res.status(500).send(error); }
+      .then(result => {
+        // if (error) { return res.status(500).send(error); }
         console.log(result)
         if (result["modifiedCount"] == 0) {
           res.status(400).send(result);
@@ -327,8 +327,8 @@ app.put('/db/:number', (req, res) => {
 app.delete('/db', (req, res) => {
     // delete everything
     collection.deleteMany({})
-      .then(result, error => {
-        if (error) { return res.status(500).send(error); }
+      .then(result => {
+        // if (error) { return res.status(500).send(error); }
         console.log(result)
         res.status(200).send(result);
       })
@@ -339,7 +339,7 @@ app.delete('/db/:number', (req, res) => {
     const { number } = req.params;
     collection.deleteOne({number: parseInt(number)})
       .then(result, error => {
-         if (error) { return res.status(500).send(error); }
+        // if (error) { return res.status(500).send(error); }
         console.log(result)
         res.status(200).send(result);
       })
