@@ -1,0 +1,8 @@
+#lab-selection {
+    width:max-content;
+    margin: 0 auto;
+}
+
+#lab-selection * {
+    margin: 5px;
+}

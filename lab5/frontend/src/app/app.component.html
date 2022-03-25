@@ -1,0 +1,21 @@
+
+
+<div id="lab-selection">
+    <button type="button" class="btn btn-primary" (click)="lab4()">Lab 4</button>
+    <button type="button" class="btn btn-primary" (click)="lab5()">Lab 5</button>
+</div>
+
+
+<ng-container *ngIf="lab4Show">
+    <app-login *ngIf="loggedin==false"></app-login>
+    <app-loggedin></app-loggedin>
+</ng-container>
+
+
+<ng-container *ngIf="lab5Show">
+    <app-api></app-api>
+</ng-container>
+
+
+
+<router-outlet></router-outlet>
