@@ -241,6 +241,7 @@ app.get("/check-like", (req, res) => {
 
 app.get('/db', (req, res) => {
     collection.find({}).toArray((error, result) => {
+      if (error) { return res.status(500).send(error); }
       console.log(result)
       res.status(200).send(result);
     })
@@ -250,6 +251,7 @@ app.get('/db', (req, res) => {
 app.get('/db/:number', (req, res) => {
     const { number } = req.params
     collection.find({number: parseInt(number)}).toArray((error, result) => {
+      if (error) { return res.status(500).send(error); }
       console.log(result);
       res.status(200).send(result)
     })
@@ -265,7 +267,8 @@ app.post('/db', (req, res) => {
       .then( result => {
         console.log(result);
         collection.insertOne({number: result + 1, data: data})
-          .then(result => {
+          .then(result, error => {
+             if (error) { return res.status(500).send(error); }
             res.status(200).send(result)
           });
       });
@@ -289,7 +292,8 @@ app.put('/db', (req, res) => {
     const options = {upsert: false};
   
     collection.updateMany(filter, replace, options)
-      .then(result => {
+      .then(result, error => {
+        if (error) { return res.status(500).send(error); }
         if (result["modifiedCount"] == 0) {
           res.status(400).send(result);
         } else {
@@ -307,7 +311,8 @@ app.put('/db/:number', (req, res) => {
     const options = {upsert: false};
   
     collection.updateOne(filter, replace, options)
-      .then(result => {
+      .then(result, error => {
+        if (error) { return res.status(500).send(error); }
         console.log(result)
         if (result["modifiedCount"] == 0) {
           res.status(400).send(result);
@@ -322,7 +327,8 @@ app.put('/db/:number', (req, res) => {
 app.delete('/db', (req, res) => {
     // delete everything
     collection.deleteMany({})
-      .then(result => {
+      .then(result, error => {
+        if (error) { return res.status(500).send(error); }
         console.log(result)
         res.status(200).send(result);
       })
@@ -332,7 +338,8 @@ app.delete('/db/:number', (req, res) => {
     // delete specific document
     const { number } = req.params;
     collection.deleteOne({number: parseInt(number)})
-      .then(result => {
+      .then(result, error => {
+         if (error) { return res.status(500).send(error); }
         console.log(result)
         res.status(200).send(result);
       })

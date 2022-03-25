@@ -1,11 +1,10 @@
 .wrapper {
-    margin: 15% auto;
+    margin: 15% auto 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     grid-auto-rows:min-content;
     width:50vw;
-    height: 75vh;
     box-sizing: border-box;
     padding: 5px;
 }
@@ -47,3 +46,9 @@
 #num_label {
     margin-right: 5px;
 }
+
+#container {
+    width: 20vw;
+    margin: 0 auto;
+}
+
