@@ -1,3 +1,7 @@
+# the angular project is not included for some reason
+# go to https://github.com/liuj-42/websci-lab7 instead
+
+
 # Websci lab 7
 
 This is the readme file for the third lab of Web Systems & Science class.
