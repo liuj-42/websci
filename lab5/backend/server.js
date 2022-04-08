@@ -19,8 +19,13 @@ const mongo = require("mongodb");
 const MongoClient = require("mongodb").MongoClient;
 const CONNECTION_URL = "mongodb+srv://jam:One23456@cluster0.rup6c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-const DATABASE_NAME = "lab5";
-const COLLECTION_NAME = "db";
+const fs = require("fs");
+
+
+
+
+const DATABASE_NAME = "labs";
+const COLLECTION_NAME = "lab7";
 
 let client_id = 'd61ccebb867543cea460e6a08bdac648'; // Your client id
 let client_secret = 'fcab6b232f724cf084d7864f1af8c8aa'; // Your secret
@@ -239,9 +244,9 @@ app.get("/check-like", (req, res) => {
 
 app.get('/lab7/populate', (req, res) => {
     const token = req.query.token;
-    
+    console.log(token)
     let options = {
-        url: "https://api.spotify.com/v1/me/top/artists",
+        url: "https://api.spotify.com/v1/me/top/artists?limit=400",
         headers: {
             'Authorization': 'Bearer ' + token
         },
@@ -252,8 +257,24 @@ app.get('/lab7/populate', (req, res) => {
         body['items'].forEach(el => {
             data.push({Artist: el['name'], Followers: el['followers']['total'], Popularity: el['popularity']});
         })
-        res.status(200).send(data)
-        // res.status(200).send(token);
+        // update specific thing
+        const filter = {number: 1};
+        const replace = {$set: {data: data}};
+        const options = {upsert: false};
+    
+        collection.updateOne(filter, replace, options)
+        .then(result => {
+            // if (error) { return res.status(500).send(error); }
+            console.log(result)
+            if (result["modifiedCount"] == 0) {
+            res.status(400).send(result);
+            } else {
+            res.status(200).send(result);
+            }
+        })
+        
+        fs.writeFileSync("test.json", JSON.stringify(data));
+        // res.status(200).send(data)
 
     })
 
