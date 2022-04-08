@@ -15,7 +15,7 @@ let cors = require('cors');
 let querystring = require('querystring');
 let cookieParser = require('cookie-parser');
 const BodyParser = require("body-parser");
-const mongo = require("mongodb")
+const mongo = require("mongodb");
 const MongoClient = require("mongodb").MongoClient;
 const CONNECTION_URL = "mongodb+srv://jam:One23456@cluster0.rup6c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
@@ -237,6 +237,30 @@ app.get("/check-like", (req, res) => {
 
 
 
+app.get('/lab7/populate', (req, res) => {
+    const token = req.query.token;
+    
+    let options = {
+        url: "https://api.spotify.com/v1/me/top/artists",
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
+        json: true
+    };
+    let data = [];
+    request.get(options, function(error, response, body) {
+        body['items'].forEach(el => {
+            data.push({Artist: el['name'], Followers: el['followers']['total'], Popularity: el['popularity']});
+        })
+        res.status(200).send(data)
+        // res.status(200).send(token);
+
+    })
+
+
+})
+
+
 // GET      ---------------------------------
 
 app.get('/db', (req, res) => {
@@ -345,3 +369,4 @@ app.delete('/db/:number', (req, res) => {
       })
 })
   
+
