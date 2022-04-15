@@ -18,13 +18,24 @@ I finally was able to rewrite the main part of my code with buliding the song ca
 I lost a lot of the sources because I accidentally closed my tabs, here is what I have left:
 
 https://developer.spotify.com/documentation/web-api/reference/#/operations/get-track
+
 https://stackoverflow.com/questions/43496307/where-should-i-store-access-token
+
 https://jsoneditoronline.org/#left=local.yiluxe
+
 https://d3-graph-gallery.com/pie
+
+
 https://www.tutorialsteacher.com/d3js/create-pie-chart-using-d3js
+
 https://stackoverflow.com/questions/31353213/does-javascript-support-array-list-comprehensions-like-python
+
 https://stackoverflow.com/questions/31353213/does-javascript-support-array-list-comprehensions-like-python
+
 https://stackoverflow.com/questions/31353213/does-javascript-support-array-list-comprehensions-like-python
+
 https://css-tricks.com/dont-overthink-flexbox-grids/
+
 http://bl.ocks.org/vigorousnorth/7331bb51d4f0c2ae0314
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
