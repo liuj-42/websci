@@ -56,6 +56,9 @@ app.get('/mongo/:number', (req, res) => {
 // POST     ---------------------------------
 app.post('/mongo', (req, res) => {
     const { data } = req.body;
+    data = 				{"year": 2010,
+    "val": 23,
+    "title": "STARSTRUKK (feat. Katy Perry)"}
     console.log(req.body)
     collection.countDocuments()
       .then( result => {
